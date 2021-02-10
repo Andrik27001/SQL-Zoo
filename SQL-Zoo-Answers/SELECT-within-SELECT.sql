@@ -106,5 +106,3 @@ WHERE population/3 >= ALL (
   WHERE x.continent = y.continent
   AND x.name != y.name
 )
-
-
