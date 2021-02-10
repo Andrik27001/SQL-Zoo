@@ -25,3 +25,17 @@ SELECT COUNT(name) AS 'name'
 FROM world
 WHERE  area >= 1000000
 
+
+-- 5. What is the total population of ('Estonia', 'Latvia', 'Lithuania'):
+
+SELECT SUM(population)
+FROM world
+WHERE name IN ('Estonia', 'Latvia', 'Lithuania')
+
+
+-- 6. For each continent show the continent and number of countries:
+
+SELECT continent, COUNT(name)
+FROM world
+GROUP BY continent
+
