@@ -28,3 +28,19 @@ SELECT team1, team2, player
 FROM goal
 JOIN game  ON (matchid = id)
 WHERE player LIKE 'Mario%'
+
+
+-- 5. Show player, teamid, coach, gtime for all goals scored in the first 10 minutes:
+
+SELECT player, teamid, coach, gtime
+FROM goal
+JOIN eteam ON (teamid = id)
+WHERE gtime<=10
+
+
+-- 6. List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach:
+
+SELECT mdate, teamname
+FROM eteam
+JOIN game ON (eteam.id = team1)
+WHERE coach =  'Fernando Santos'
