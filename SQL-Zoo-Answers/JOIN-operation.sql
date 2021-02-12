@@ -1,4 +1,4 @@
--- JOIN operation Tutotial
+-- JOIN operation Tutorial
 
 -- 1. Show the matchid and player name for all goals scored by Germany:
 

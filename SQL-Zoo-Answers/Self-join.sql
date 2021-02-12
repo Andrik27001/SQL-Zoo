@@ -1,4 +1,4 @@
--- Self join Tutorial
+-- Self-join Tutorial
 
 -- 1. How many stops are in the database:
 

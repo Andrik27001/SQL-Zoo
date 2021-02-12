@@ -1,4 +1,4 @@
--- More JOIN operations Tutotial
+-- More JOIN operations Tutorial
 
 -- 1. List the films where the yr is 1962 [Show id, title]:
 
