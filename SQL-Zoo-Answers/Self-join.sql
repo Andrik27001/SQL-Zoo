@@ -65,3 +65,25 @@ JOIN route b ON (a.company=b.company AND a.num=b.num)
 JOIN stops stopa ON (a.stop=stopa.id)
 JOIN stops stopb ON (b.stop=stopb.id)
 WHERE stopa.name='Craiglockhart' AND stopb.name = 'Tollcross'
+
+
+-- 9. Give a distinct list of the stops which may be reached from 'Craiglockhart' by taking one bus, including 'Craiglockhart' itself, offered by the LRT company. Include the company and bus no. of the relevant services:
+
+SELECT DISTINCT stopb.name, a.company, a.num
+FROM route a
+JOIN route b ON (a.company=b.company AND a.num=b.num)
+JOIN stops stopa ON (a.stop=stopa.id)
+JOIN stops stopb ON (b.stop=stopb.id)
+WHERE stopa.name='Craiglockhart'
+
+
+-- 10. Find the routes involving two buses that can go from Craiglockhart to Lochend. Show the bus no. and company for the first bus, the name of the stop for the transfer, and the bus no. and company for the second bus:
+
+SELECT DISTINCT bus1.num, bus1.company, transfer.name, bus2.num, bus2.company
+FROM route bus1
+JOIN route midA ON (bus1.num = midA.num AND bus1.company = midA.company)
+JOIN route midD ON (midA.stop = midD.stop)
+JOIN route bus2 ON (midD.num = bus2.num AND midD.company= bus2.company)
+JOIN stops transfer ON (midA.stop = transfer.id)
+WHERE bus1.stop = 53 AND bus2.stop = 147
+ORDER BY bus1.company, bus1.num, midA.stop, bus2.num
